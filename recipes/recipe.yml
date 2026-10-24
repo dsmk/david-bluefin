@@ -32,6 +32,15 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
+  - type: bling
+    install:
+      - 1password # 1Password desktop app (stable) + the `op` CLI
+        # Installs from 1Password's RPM repo, then fixes it up for an
+        # ostree image: the onepassword/onepassword-cli groups are created
+        # via sysusers.d with fixed GIDs (1500/1600) so they survive into
+        # the deployed system, and the browser-support/op binaries get the
+        # setgid bits they need.
+
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
