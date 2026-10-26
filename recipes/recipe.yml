@@ -26,6 +26,8 @@ modules:
       packages:
         - micro
         - starship
+        - gh
+        - bcvk
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
