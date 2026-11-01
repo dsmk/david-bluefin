@@ -25,10 +25,12 @@ modules:
         - atim/starship
     install:
       packages:
+        - bcvk
+        - chezmoi
+        - gh
         - micro
         - starship
-        - gh
-        - bcvk
+        - toolbox
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
