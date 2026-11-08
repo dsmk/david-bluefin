@@ -41,9 +41,9 @@ modules:
 #        - firefox
 #        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
-  - type: bling
-    install:
-      - 1password # 1Password desktop app (stable) + the `op` CLI
+#  - type: bling
+#    install:
+#      - 1password # 1Password desktop app (stable) + the `op` CLI
         # Installs from 1Password's RPM repo, then fixes it up for an
         # ostree image: the onepassword/onepassword-cli groups are created
         # via sysusers.d with fixed GIDs (1500/1600) so they survive into
@@ -54,10 +54,10 @@ modules:
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
         scope: system
-        # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - com.discordapp.Discord
-          - com.slack.Slack 
+#        # If no repo information is specified, Flathub will be used by default
+#        install: # system flatpaks we want all users to have and not remove
+#          - com.discordapp.Discord
+#          - com.slack.Slack 
       - scope: user # Also add Flathub user repo, but no user packages
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
